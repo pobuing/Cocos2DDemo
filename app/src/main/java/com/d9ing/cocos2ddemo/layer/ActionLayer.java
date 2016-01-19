@@ -2,7 +2,6 @@ package com.d9ing.cocos2ddemo.layer;
 
 import android.support.annotation.NonNull;
 
-<<<<<<< HEAD
 import org.cocos2d.actions.base.CCRepeatForever;
 import org.cocos2d.actions.ease.CCEaseIn;
 import org.cocos2d.actions.ease.CCEaseOut;
@@ -24,7 +23,6 @@ import org.cocos2d.nodes.CCNode;
 import org.cocos2d.nodes.CCSprite;
 import org.cocos2d.types.CCBezierConfig;
 import org.cocos2d.types.ccColor3B;
-=======
 import org.cocos2d.actions.base.CCAction;
 import org.cocos2d.actions.base.CCRepeatForever;
 import org.cocos2d.actions.interval.CCJumpBy;
@@ -34,7 +32,6 @@ import org.cocos2d.actions.interval.CCSequence;
 import org.cocos2d.layers.CCLayer;
 import org.cocos2d.nodes.CCNode;
 import org.cocos2d.nodes.CCSprite;
->>>>>>> origin/master
 
 /**
  * 动作的图层
@@ -50,7 +47,6 @@ public class ActionLayer extends CCLayer {
      * 初始化方法
      */
     private void init() {
-<<<<<<< HEAD
 //        moveTo();
 //        moveBy();
 //        jumpBy();
@@ -77,8 +73,8 @@ public class ActionLayer extends CCLayer {
         CCRepeatForever forever = CCRepeatForever.action(sequence);
         CCSprite ccSprite = getCcSprite();
         //设置锚点，改为自身位置
-        ccSprite.setAnchorPoint(0.5f,0.5f);
-        ccSprite.setPosition(50,50);
+        ccSprite.setAnchorPoint(0.5f, 0.5f);
+        ccSprite.setPosition(50, 50);
         ccSprite.runAction(forever);
     }
 
@@ -92,7 +88,7 @@ public class ActionLayer extends CCLayer {
         CCSequence sequence = CCSequence.actions(blink, reverse);
         CCRepeatForever forever = CCRepeatForever.action(sequence);
         CCSprite ccSprite = getCcSprite();
-        ccSprite.setPosition(100,200);
+        ccSprite.setPosition(100, 200);
         ccSprite.runAction(forever);
     }
 
@@ -102,13 +98,13 @@ public class ActionLayer extends CCLayer {
     private void tint() {
         //创建显示的精灵
         //参数1 显示的内容 参数2 字体的样式 参数3 字体大小
-        CCLabel label = CCLabel.labelWithString("DDDDD9","hkbd.ttf",24);
+        CCLabel label = CCLabel.labelWithString("DDDDD9", "hkbd.ttf", 24);
         //设置初始颜色
-        label.setColor(ccc3(50,0,255));
+        label.setColor(ccc3(50, 0, 255));
         label.setPosition(200, 200);
         this.addChild(label);
         //创建颜色类
-        ccColor3B color3B = ccc3(100,255,-100);
+        ccColor3B color3B = ccc3(100, 255, -100);
         //参数1 时间 参数2 变化后的颜色
         CCTintBy ccTintBy = CCTintBy.action(2, color3B);
         CCTintBy reverse = ccTintBy.reverse();
@@ -123,7 +119,7 @@ public class ActionLayer extends CCLayer {
     private void fadeIn() {
         CCFadeIn fadeIn = CCFadeIn.action(10);
         CCSprite sprite = getCcSprite();
-        sprite.setPosition(20,50);
+        sprite.setPosition(20, 50);
         sprite.runAction(fadeIn);
 
     }
@@ -133,8 +129,8 @@ public class ActionLayer extends CCLayer {
      */
     private void bezierBy() {
         CCBezierConfig ccBezierConfig = new CCBezierConfig();
-        ccBezierConfig.controlPoint_1 = ccp(0,0);
-        ccBezierConfig.controlPoint_2 = ccp(100,100);
+        ccBezierConfig.controlPoint_1 = ccp(0, 0);
+        ccBezierConfig.controlPoint_2 = ccp(100, 100);
         ccBezierConfig.endPosition = ccp(120, 120);
         CCBezierBy ccBezierBy = CCBezierBy.action(3, ccBezierConfig);
         CCBezierBy reverse = ccBezierBy.reverse();
@@ -166,11 +162,9 @@ public class ActionLayer extends CCLayer {
         CCRepeatForever forever = CCRepeatForever.action(ccSequence);
         getCcSprite().runAction(forever);
 
-=======
         moveTo();
         moveBy();
         jumpBy();
->>>>>>> origin/master
     }
 
     /**
@@ -198,24 +192,21 @@ public class ActionLayer extends CCLayer {
     private void moveTo() {
         CCSprite sprite = getCcSprite();
         //参数1 移动的时间 参数2 移动的目的地
-<<<<<<< HEAD
-        CCMoveTo ccMoveTo = CCMoveTo.action(5, CCNode.ccp(200, 0));
+//        CCMoveTo ccMoveTo = CCMoveTo.action(5, CCNode.ccp(200, 0));
         //减速度 参数 加速度数值
 //        CCEaseOut easeOut = CCEaseOut.action(ccMoveTo, 5);
         //加速度
+        CCMoveTo ccMoveTo = CCMoveTo.action(2, CCNode.ccp(200, 0));
         CCEaseIn easeIn = CCEaseIn.action(ccMoveTo, 5);
         sprite.runAction(easeIn);
-=======
-        CCMoveTo ccMoveTo = CCMoveTo.action(2, CCNode.ccp(200, 0));
         sprite.runAction(ccMoveTo);
->>>>>>> origin/master
     }
 
     @NonNull
     private CCSprite getCcSprite() {
         CCSprite sprite = CCSprite.sprite("z_1_attack_01.png");
         //修改锚点
-        sprite.setAnchorPoint(0,0);
+        sprite.setAnchorPoint(0, 0);
         this.addChild(sprite);
         return sprite;
     }
