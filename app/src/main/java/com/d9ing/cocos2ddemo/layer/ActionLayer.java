@@ -2,6 +2,7 @@ package com.d9ing.cocos2ddemo.layer;
 
 import android.support.annotation.NonNull;
 
+<<<<<<< HEAD
 import org.cocos2d.actions.base.CCRepeatForever;
 import org.cocos2d.actions.ease.CCEaseIn;
 import org.cocos2d.actions.ease.CCEaseOut;
@@ -23,6 +24,17 @@ import org.cocos2d.nodes.CCNode;
 import org.cocos2d.nodes.CCSprite;
 import org.cocos2d.types.CCBezierConfig;
 import org.cocos2d.types.ccColor3B;
+=======
+import org.cocos2d.actions.base.CCAction;
+import org.cocos2d.actions.base.CCRepeatForever;
+import org.cocos2d.actions.interval.CCJumpBy;
+import org.cocos2d.actions.interval.CCMoveBy;
+import org.cocos2d.actions.interval.CCMoveTo;
+import org.cocos2d.actions.interval.CCSequence;
+import org.cocos2d.layers.CCLayer;
+import org.cocos2d.nodes.CCNode;
+import org.cocos2d.nodes.CCSprite;
+>>>>>>> origin/master
 
 /**
  * 动作的图层
@@ -38,6 +50,7 @@ public class ActionLayer extends CCLayer {
      * 初始化方法
      */
     private void init() {
+<<<<<<< HEAD
 //        moveTo();
 //        moveBy();
 //        jumpBy();
@@ -153,6 +166,11 @@ public class ActionLayer extends CCLayer {
         CCRepeatForever forever = CCRepeatForever.action(ccSequence);
         getCcSprite().runAction(forever);
 
+=======
+        moveTo();
+        moveBy();
+        jumpBy();
+>>>>>>> origin/master
     }
 
     /**
@@ -180,12 +198,17 @@ public class ActionLayer extends CCLayer {
     private void moveTo() {
         CCSprite sprite = getCcSprite();
         //参数1 移动的时间 参数2 移动的目的地
+<<<<<<< HEAD
         CCMoveTo ccMoveTo = CCMoveTo.action(5, CCNode.ccp(200, 0));
         //减速度 参数 加速度数值
 //        CCEaseOut easeOut = CCEaseOut.action(ccMoveTo, 5);
         //加速度
         CCEaseIn easeIn = CCEaseIn.action(ccMoveTo, 5);
         sprite.runAction(easeIn);
+=======
+        CCMoveTo ccMoveTo = CCMoveTo.action(2, CCNode.ccp(200, 0));
+        sprite.runAction(ccMoveTo);
+>>>>>>> origin/master
     }
 
     @NonNull
